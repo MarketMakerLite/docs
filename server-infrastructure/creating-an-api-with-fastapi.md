@@ -68,6 +68,24 @@ sudo systemctl enable fastapi.service
  sudo systemctl start fastapi.servicebas
 ```
 
+### \[Optional] Create a Monitor with Monit
+
+<pre class="language-bash"><code class="lang-bash">#Create a new Monit file:
+sudo nano /etc/monit/conf.d/fastapi.conf
+<strong># Add the following to the new file:
+</strong><strong>check process fastapi.service
+</strong>    matching "fastapi.service"
+    start program = "/bin/systemctl start fastapi.service"
+    stop program = "/bin/systemctl stop fastapi.service"
+    if not exists then alert
+    set log /var/log/fastapi.log
+
+# Reload
+sudo monit reload
+
+# Restart Monit
+sudo service monit restart</code></pre>
+
 ### Websockets
 
 ```python
