@@ -37,10 +37,10 @@ sudo /home/ubuntu/fastapi/main:app --reload
 ### Creating a FastAPI Ubuntu service
 
 ```bash
-#Create a new service file:
+# Create a new service file:
 sudo nano /etc/systemd/system/fastapi.service
 
-#Add the following to the new file:
+# Add the following to the new file:
 [Unit]
 Description=FastAPI
 After=multi-user.target
@@ -53,19 +53,19 @@ StandardError=append:/home/ubuntu/logs/fastapi.log
 [Install]
 WantedBy=multi-user.target
 
-#Close Nano
+# Close Nano
 ^X
 y
 [Enter]
 
-#Refresh services
+# Refresh services
 sudo systemctl daemon-reload
 
-#Enable service (auto-launch e.g. persist when instance is restarted)
+# Enable service (auto-launch e.g. persist when instance is restarted)
 sudo systemctl enable fastapi.service
 
-#Start service
- sudo systemctl start fastapi.servicebas
+# Start service
+sudo systemctl start fastapi.service
 ```
 
 ### \[Optional] Create a Monitor with Monit
