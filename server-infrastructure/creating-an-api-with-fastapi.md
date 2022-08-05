@@ -70,8 +70,9 @@ sudo systemctl enable fastapi.service
 
 ### \[Optional] Create a Monitor with Monit
 
-<pre class="language-bash"><code class="lang-bash">#Create a new Monit file:
+<pre class="language-bash"><code class="lang-bash"># Create a new Monit file:
 sudo nano /etc/monit/conf.d/fastapi.conf
+
 <strong># Add the following to the new file:
 </strong><strong>check process fastapi.service
 </strong>    matching "fastapi.service"
