@@ -76,7 +76,7 @@ sudo dd if=/dev/zero of=/eph/swapfile bs=1M count=34360
 sudo chown root:root /eph/swapfile
 sudo chmod 600 /eph/swapfile
 sudo mkswap /eph/swapfile
-sudo swapon /eph/swapfileSome code
+sudo swapon /eph/swapfile
 ```
 
 **Step 4:** Ensure fstab is set correctly `sudo nano /etc/fstab`
