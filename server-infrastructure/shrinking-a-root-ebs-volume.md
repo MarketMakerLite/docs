@@ -4,7 +4,7 @@ description: This guide explains how to shrink a root EBS volume on an AWS EC2
 
 # Shrinking a Root EBS Volume
 
-**Background:** We have an EC2 instance and a root EBS volume where we want to shrink the size
+**Background:** We have an EC2 instance with a root EBS volume that we want to shrink
 
 **Step 0:** We'll call the existing EC2 instance **IA** and the existing EBS volume **VA**
 
@@ -41,11 +41,11 @@ description: This guide explains how to shrink a root EBS volume on an AWS EC2
 
 **Step 13:** Mount **VA2** to source using `sudo mount -t ext4 /dev/nvme3n1p1 /source`
 
-<mark style="background-color:orange;">**Step 14 \[VERY IMPORTANT]**</mark>**:**  We need to properly label the file system with an e2label in order for Linux to boot correctly
+<mark style="background-color:orange;">**Step 14 \[VERY IMPORTANT]:**</mark>**  **  We need to properly label the file system with an e2label in order for Linux to boot correctly
 
 * First, check the label of **VA2** using `sudo e2label /dev/nvme3n1p1`
 * In my case it returns **cloudimg-rootfs**
-* Next, we'll set VB to have the same label using `sudo e2label /dev/nvme2n1p1 cloudimg-rootfs`
+* Next, we'll set **VB** to have the same label using `sudo e2label /dev/nvme2n1p1 cloudimg-rootfs`
 
 **Step 15:** Now we can copy the contents using `sudo rsync -vaxSHAX /source/ /target` _Note: there is no "/" following "/target"_
 
