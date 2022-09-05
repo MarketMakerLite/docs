@@ -18,11 +18,11 @@ description: This guide explains how to shrink a root EBS volume on an AWS EC2
 
 **Step 4:** Detach **VB** and **VA** from their instances
 
-**Step 5:** Create a snapshot of **VA**.
+**Step 5:** Create a snapshot of **VA**
 
 **Step 6:** Create a new volume of the same type and size of **VA** from the snapshot, we'll call this volume **VA2**
 
-**Step 7:** Create another new EC2 instance using the same method as **Step 1**, we'll call this instance **IC**. (The root volume for **IC** can be a small 8gb basic gp3 drive, we're just using this to copy between **VA2** and **VB**.)
+**Step 7:** Create another new EC2 instance using the same method as **Step 1**, we'll call this instance **IC**. (The root volume for **IC** can be a small 8gb basic gp3 drive, we're just using this to copy between **VA2** and **VB**)
 
 **Step 8:** Attach the volumes to **IC** in the following order:&#x20;
 
@@ -57,7 +57,7 @@ description: This guide explains how to shrink a root EBS volume on an AWS EC2
 
 **Step 19:** Restart **IA**
 
-**Step 20:** After verifying that **IA** is working correctly with **VB**. Cleanup and delete the created instances and volumes (IB, IC, VA2, VA).
+**Step 20:** After verifying that **IA** is working correctly with **VB**. Cleanup and delete the created instances and volumes (IB, IC, VA2, VA)
 
 \-----------------------------------------------------------------------------------------------------
 
