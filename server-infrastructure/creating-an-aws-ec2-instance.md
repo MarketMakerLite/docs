@@ -80,7 +80,7 @@ You will now see an allocated static IPv4 address in your Elastic IP console
 
 Select your newly created EC2 instance and associate the Elastic IP
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (1).png>)
 
 Click "Associate" and you'll see that the Elastic IP is now attached to your EC2 instance. This allows us to always use the same IP address, regardless if the instance is stopped & restarted (which would generally refresh the internal IPv4 address).
 
@@ -303,7 +303,7 @@ sudo nano /etc/caddy/Caddyfile
 
 Edit the config file to match the following screenshot
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 #### Editing Security Group
 

@@ -37,7 +37,7 @@
   * [Installing PostgreSQL](server-infrastructure/databases/installing-postgresql.md)
   * [Installing TimescaleDB](server-infrastructure/databases/installing-timescaledb.md)
 * [Creating an AWS EC2 Instance](server-infrastructure/creating-an-aws-ec2-instance.md)
-* [Setting up an Ubuntu 20.04 Server](server-infrastructure/setting-up-an-ubuntu-20.04-server.md)
+* [Shrinking a Root EBS Volume](server-infrastructure/shrinking-a-root-ebs-volume.md)
 * [Creating an API with FastAPI](server-infrastructure/creating-an-api-with-fastapi.md)
 * [Installing and Using Redis](server-infrastructure/installing-and-using-redis.md)
 * [Installing and Using RabbitMQ](server-infrastructure/installing-and-using-rabbitmq.md)
