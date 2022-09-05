@@ -1,10 +1,10 @@
 ---
-description: This guide explains how to shrink a root EBSvolume on AWS.
+description: This guide explains how to shrink a root EBS volume on an AWS EC2
 ---
 
 # Shrinking a Root EBS Volume
 
-**Situation:** We have an EC2 instance and a root EBS volume where we want to shrink the size
+**Background:** We have an EC2 instance and a root EBS volume where we want to shrink the size
 
 **Step 0:** We'll call the existing EC2 instance **IA** and the existing EBS volume **VA**
 
