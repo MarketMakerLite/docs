@@ -301,9 +301,55 @@ Edit Caddy Config Files
 sudo nano /etc/caddy/Caddyfile
 ```
 
-Edit the config file to match the following screenshot
+Edit the config file to match the following:
 
-![](<../.gitbook/assets/image (1) (1).png>)
+```
+
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace ":80" below with your
+# domain name.
+
+# :80 {
+        # Set this path to your site's directory.
+#       root * /usr/share/caddy
+
+        # Enable the static file server.
+#       file_server
+
+        # Another common task is to set up a reverse proxy:
+#       reverse_proxy 0.0.0.0:8080
+
+        # Or serve a PHP site through php-fpm:
+        # php_fastcgi localhost:9000
+# }
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+
+[your elastic IP]:443 {
+    reverse_proxy 0.0.0.0:8000 {
+        header_up Host {http.request.host}
+        header_up X-Real-IP {http.request.remote}
+        header_up X-Forwarded-For {http.request.remote}
+        header_up X-Forwarded-Port {http.request.port}
+        header_up X-Forwarded-Proto {http.request.scheme}
+    }
+    tls user@example.com
+    log {
+        output file /var/log/caddy/access.log {
+                roll_size 1mb
+                roll_keep 4
+                roll_keep_for 24h
+        }
+    }
+}
+```
 
 #### Editing Security Group
 
