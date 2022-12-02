@@ -6,10 +6,19 @@ description: >-
 
 # Creating an API with FastAPI
 
+### Create Virtual Environment
+
+```
+mkdir fastapi
+cd fastapi
+python3 -m venv env
+source env/bin/activate
+```
+
 ### Create a FASTAPI project
 
 ```
-pip install fastAPI
+pip install fastapi uvicorn
 ```
 
 ### Create main.py
@@ -33,6 +42,8 @@ sudo /home/ubuntu/fastapi/main:app --reload
 ```
 
 ### Visit Documentation
+
+[https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/)
 
 ### Creating a FastAPI Ubuntu service
 
@@ -85,7 +96,8 @@ sudo nano /etc/monit/conf.d/fastapi.conf
 sudo monit reload
 
 # Restart Monit
-sudo service monit restart</code></pre>
+sudo service monit restart
+</code></pre>
 
 ### Websockets
 
